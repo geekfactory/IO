@@ -1,0 +1,3 @@
+[submodule "delay"]
+	path = delay
+	url = https://github.com/geekfactory/delay
