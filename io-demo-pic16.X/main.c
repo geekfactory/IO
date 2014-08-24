@@ -28,14 +28,14 @@ void main()
 	//OSCCON = 0x7C; // Para usar el oscilador interno PIC16F88 8 Mhz
 	ANSEL = 0x00; // Configuracion de canales analogicos en PIC16F88
 
-	io_mode(8,OUTPUT);
-	io_mode(9,OUTPUT);
-	io_mode(10,OUTPUT);
-	io_mode(11,OUTPUT);
-	io_mode(12,OUTPUT);
-	io_mode(13,OUTPUT);
-	io_mode(14,OUTPUT);
-	io_mode(15,OUTPUT);
+	io_mode(8,0);
+	io_mode(9,0);
+	io_mode(10,0);
+	io_mode(11,0);
+	io_mode(12,0);
+	io_mode(13,0);
+	io_mode(14,0);
+	io_mode(15,0);
 
 	for (;;) {
 		PORTAbits.RA0 = 1;
