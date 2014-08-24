@@ -1,0 +1,224 @@
+___awdiv@counter 75 0 COMMON 1
+__CFG_WRT$OFF 0 0 ABS 0
+__end_of_io_mode 716 0 CODE 0
+__S0 2009 0 ABS 0
+__S1 7E 0 ABS 0
+__S2 0 0 ABS 0
+__Hintentry 0 0 CODE 0
+__Lintentry 0 0 CODE 0
+__end_of___awdiv 788 0 CODE 0
+__size_of_io_mode 0 0 ABS 0
+_main 788 0 CODE 0
+_mask 8 0 STRING 0
+btemp 7E 0 ABS 0
+start 0 0 CODE 0
+_TRISA 85 0 ABS 0
+_TRISB 86 0 ABS 0
+_PORTA 5 0 ABS 0
+reset_vec 0 0 CODE 0
+_PORTB 6 0 ABS 0
+?_io_mode 79 0 COMMON 1
+_ANSEL 9B 0 ABS 0
+wtemp0 7E 0 ABS 0
+io_write@pin 21 0 BANK0 1
+__Hconfig 2009 0 CONFIG 0
+__Lconfig 2007 0 CONFIG 0
+__end_of__stringtab 8 0 STRING 0
+main@i 27 0 BANK0 1
+__Hram 0 0 ABS 0
+__Lram 0 0 ABS 0
+_io_write 658 0 CODE 0
+io_mode@value 79 0 COMMON 1
+__Hfunctab 0 0 CODE 0
+__Lfunctab 0 0 CODE 0
+__Hcommon 0 0 ABS 0
+__Lcommon 0 0 ABS 0
+__Heeprom_data 0 0 EEDATA 2
+__Leeprom_data 0 0 EEDATA 2
+?___awdiv 70 0 COMMON 1
+__Habs1 0 0 ABS 0
+__Labs1 0 0 ABS 0
+__Hsfr0 0 0 ABS 0
+__Lsfr0 0 0 ABS 0
+__Hsfr1 0 0 ABS 0
+__Lsfr1 0 0 ABS 0
+__Hsfr2 0 0 ABS 0
+__Lsfr2 0 0 ABS 0
+__Hsfr3 0 0 ABS 0
+__Lsfr3 0 0 ABS 0
+_trisptrs 2D 0 BANK0 1
+_portptrs 29 0 BANK0 1
+__size_of_io_write 0 0 ABS 0
+__Hcode 0 0 ABS 0
+__Lcode 0 0 ABS 0
+__HcstackBANK0 0 0 ABS 0
+__LcstackBANK0 0 0 ABS 0
+__pcstackBANK0 20 0 BANK0 1
+?_io_write 79 0 COMMON 1
+__Hinit 0 0 CODE 0
+__Linit 0 0 CODE 0
+__end_of_main 800 0 CODE 0
+io_write@num 23 0 BANK0 1
+__Htext 0 0 ABS 0
+__Ltext 0 0 ABS 0
+__HdataBANK0 0 0 ABS 0
+__LdataBANK0 0 0 ABS 0
+__pdataBANK0 29 0 BANK0 1
+end_of_initialization 655 0 CODE 0
+___awdiv@sign 76 0 COMMON 1
+__stringtab 2 0 STRING 0
+io_write@value 79 0 COMMON 1
+__CFG_FOSC$XT 0 0 ABS 0
+__Hstrings 0 0 ABS 0
+__Lstrings 0 0 ABS 0
+__pstrings 2 0 STRING 0
+io_write@port 22 0 BANK0 1
+__Hbank0 0 0 ABS 0
+__Lbank0 0 0 ABS 0
+__Hbank1 0 0 ABS 0
+__Lbank1 0 0 ABS 0
+__Hbank2 0 0 ABS 0
+__Lbank2 0 0 ABS 0
+__Hbank3 0 0 ABS 0
+__Lbank3 0 0 ABS 0
+__Hpowerup 0 0 CODE 0
+__Lpowerup 0 0 CODE 0
+__end_of_io_write 6B7 0 CODE 0
+__Hclrtext 0 0 ABS 0
+__Lclrtext 0 0 ABS 0
+__end_of_mask 10 0 STRING 0
+__end_of__initialization 655 0 CODE 0
+io_mode@pin 21 0 BANK0 1
+_io_mode 6B7 0 CODE 0
+__Hidloc 0 0 IDLOC 0
+__Lidloc 0 0 IDLOC 0
+__Hcinit 0 0 ABS 0
+__Lcinit 0 0 ABS 0
+___awdiv 716 0 CODE 0
+io_write@now 20 0 BANK0 1
+__size_of_main 0 0 ABS 0
+__HidataBANK0 0 0 ABS 0
+__LidataBANK0 0 0 ABS 0
+__pidataBANK0 62B 0 CODE 0
+io_mode@num 23 0 BANK0 1
+__CFG_FCMEN$OFF 0 0 ABS 0
+io_mode@port 22 0 BANK0 1
+__size_of___awdiv 0 0 ABS 0
+__ptext63 6B7 0 CODE 0
+__ptext64 658 0 CODE 0
+__CFG_BOREN$OFF 0 0 ABS 0
+__ptext65 716 0 CODE 0
+__CFG_PWRTE$OFF 0 0 ABS 0
+__ptext66 0 0 CODE 0
+__Hend_init 2 0 CODE 0
+__Lend_init 0 0 CODE 0
+___awdiv@divisor 70 0 COMMON 1
+io_mode@now 20 0 BANK0 1
+__Hreset_vec 0 0 CODE 0
+__Lreset_vec 0 0 CODE 0
+intlevel0 0 0 CODE 0
+__CFG_WDTE$OFF 0 0 ABS 0
+intlevel1 0 0 CODE 0
+intlevel2 0 0 CODE 0
+intlevel3 0 0 CODE 0
+intlevel4 0 0 CODE 0
+intlevel5 0 0 CODE 0
+__HcstackCOMMON 0 0 ABS 0
+__LcstackCOMMON 0 0 ABS 0
+__pcstackCOMMON 70 0 COMMON 1
+__CFG_CPD$OFF 0 0 ABS 0
+start_initialization 633 0 CODE 0
+___awdiv@quotient 77 0 COMMON 1
+__Hmaintext 0 0 ABS 0
+__Lmaintext 0 0 ABS 0
+__CFG_IESO$OFF 0 0 ABS 0
+__pmaintext 788 0 CODE 0
+__CFG_MCLRE$ON 0 0 ABS 0
+__initialization 633 0 CODE 0
+__CFG_CP$OFF 0 0 ABS 0
+__CFG_LVP$OFF 0 0 ABS 0
+__CFG_CCPMX$RB0 0 0 ABS 0
+___awdiv@dividend 72 0 COMMON 1
+%segments
+reset_vec 0 3 CODE 0 0
+config 400E 4011 CONFIG 400E 0
+cstackCOMMON 70 7D COMMON 70 1
+cstackBANK0 20 30 BANK0 20 1
+maintext F10 FFF CODE F10 0
+text65 E2C F0F CODE E2C 0
+text63 D6E E2B CODE D6E 0
+text64 CB0 D6D CODE CB0 0
+cinit C66 CAF CODE C66 0
+strings 4 1F STRING 4 0
+idataBANK0 C56 C65 CODE C56 0
+%locals
+dist/default/production\io-demo-pic16.X.production.obj
+../IO.c
+3 62B 0 CODE 0
+23 62F 0 CODE 0
+../IO.c
+42 8 0 STRING 0
+../IO.c
+23 633 0 CODE 0
+main.c
+30 788 0 CODE 0
+32 78B 0 CODE 0
+33 790 0 CODE 0
+34 795 0 CODE 0
+35 79A 0 CODE 0
+36 79F 0 CODE 0
+37 7A4 0 CODE 0
+38 7A9 0 CODE 0
+39 7AE 0 CODE 0
+42 7B4 0 CODE 0
+43 7C9 0 CODE 0
+44 7D1 0 CODE 0
+45 7E0 0 CODE 0
+42 7E7 0 CODE 0
+48 7FD 0 CODE 0
+50 7FE 0 CODE 0
+../IO.c
+56 6B7 0 CODE 0
+57 6BA 0 CODE 0
+58 6CE 0 CODE 0
+60 6D3 0 CODE 0
+62 6E7 0 CODE 0
+63 6EC 0 CODE 0
+65 6F7 0 CODE 0
+67 701 0 CODE 0
+68 715 0 CODE 0
+../IO.c
+71 658 0 CODE 0
+72 65B 0 CODE 0
+73 66F 0 CODE 0
+75 674 0 CODE 0
+77 688 0 CODE 0
+78 68D 0 CODE 0
+80 698 0 CODE 0
+82 6A2 0 CODE 0
+83 6B6 0 CODE 0
+C:\Program Files (x86)\Microchip\xc8\v1.12\sources\awdiv.c
+9 716 0 CODE 0
+10 717 0 CODE 0
+11 71B 0 CODE 0
+12 720 0 CODE 0
+14 723 0 CODE 0
+15 727 0 CODE 0
+16 72C 0 CODE 0
+18 731 0 CODE 0
+19 733 0 CODE 0
+20 739 0 CODE 0
+21 73B 0 CODE 0
+22 73C 0 CODE 0
+23 743 0 CODE 0
+21 748 0 CODE 0
+26 74E 0 CODE 0
+27 755 0 CODE 0
+28 75F 0 CODE 0
+29 765 0 CODE 0
+31 767 0 CODE 0
+32 76E 0 CODE 0
+34 776 0 CODE 0
+35 77A 0 CODE 0
+36 780 0 CODE 0
+37 787 0 CODE 0

@@ -1,14 +1,40 @@
 Version 3.2 HI-TECH Software Intermediate Code
-[p mainexit ]
-"1688 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
-[v _ANSEL `Vuc ~T0 @X0 0 e@155 ]
-"60 ../IO.h
-[v _io_mode `(v ~T0 @X0 0 ef2`uc`uc ]
-"71
-[v _io_write `(v ~T0 @X0 0 ef2`uc`uc ]
-"151 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic.h
-[v __delay `(v ~T0 @X0 0 ef1`ul ]
-[p i __delay ]
+"155 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
+[v _PORTA `Vuc ~T0 @X0 0 e@5 ]
+"216
+[v _PORTB `Vuc ~T0 @X0 0 e@6 ]
+"1052
+[v _TRISA `Vuc ~T0 @X0 0 e@133 ]
+"1113
+[v _TRISB `Vuc ~T0 @X0 0 e@134 ]
+[; ;stdint.h: 13: typedef signed char int8_t;
+[; ;stdint.h: 20: typedef signed int int16_t;
+[; ;stdint.h: 28: typedef signed short long int int24_t;
+[; ;stdint.h: 36: typedef signed long int int32_t;
+[; ;stdint.h: 43: typedef unsigned char uint8_t;
+[; ;stdint.h: 49: typedef unsigned int uint16_t;
+[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
+[; ;stdint.h: 63: typedef unsigned long int uint32_t;
+[; ;stdint.h: 71: typedef signed char int_least8_t;
+[; ;stdint.h: 78: typedef signed int int_least16_t;
+[; ;stdint.h: 90: typedef signed short long int int_least24_t;
+[; ;stdint.h: 98: typedef signed long int int_least32_t;
+[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
+[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
+[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
+[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
+[; ;stdint.h: 137: typedef signed char int_fast8_t;
+[; ;stdint.h: 144: typedef signed int int_fast16_t;
+[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
+[; ;stdint.h: 164: typedef signed long int int_fast32_t;
+[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
+[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
+[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
+[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
+[; ;stdint.h: 200: typedef int32_t intmax_t;
+[; ;stdint.h: 205: typedef uint32_t uintmax_t;
+[; ;stdint.h: 210: typedef int16_t intptr_t;
+[; ;stdint.h: 215: typedef uint16_t uintptr_t;
 [; ;pic16f88.h: 44: extern volatile unsigned char INDF @ 0x000;
 "46 C:\Program Files (x86)\Microchip\xc8\v1.12\include\pic16f88.h
 [; ;pic16f88.h: 46: asm("INDF equ 00h");
@@ -915,169 +941,193 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;eeprom_routines.h: 43: extern void eecpymem(volatile unsigned char *to, __eeprom unsigned char *from, unsigned char size);
 [; ;eeprom_routines.h: 44: extern void memcpyee(__eeprom unsigned char *to, const unsigned char *from, unsigned char size);
 [; ;pic.h: 151: extern void _delay(unsigned long);
-[; ;stdio.h: 8: typedef int ptrdiff_t;
-[; ;stdio.h: 9: typedef unsigned size_t;
-[; ;stdio.h: 10: typedef unsigned short wchar_t;
-[; ;stdarg.h: 7: typedef void * va_list[1];
-[; ;stdarg.h: 10: extern void * __va_start(void);
-[; ;stdarg.h: 13: extern void * __va_arg(void *, ...);
-[; ;stdio.h: 23: extern int errno;
-[; ;stdio.h: 54: struct __prbuf
-[; ;stdio.h: 55: {
-[; ;stdio.h: 56: char * ptr;
-[; ;stdio.h: 57: void (* func)(char);
-[; ;stdio.h: 58: };
-[; ;conio.h: 17: extern int errno;
-[; ;conio.h: 20: extern void init_uart(void);
-[; ;conio.h: 22: extern char getch(void);
-[; ;conio.h: 23: extern char getche(void);
-[; ;conio.h: 24: extern void putch(char);
-[; ;conio.h: 25: extern void ungetch(char);
-[; ;conio.h: 27: extern __bit kbhit(void);
-[; ;conio.h: 31: extern char * cgets(char *);
-[; ;conio.h: 32: extern void cputs(const char *);
-[; ;stdio.h: 99: extern int cprintf(char *, ...);
-[; ;stdio.h: 104: extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-[; ;stdio.h: 194: extern char * gets(char *);
-[; ;stdio.h: 195: extern int puts(const char *);
-[; ;stdio.h: 196: extern int scanf(const char *, ...);
-[; ;stdio.h: 197: extern int sscanf(const char *, const char *, ...);
-[; ;stdio.h: 198: extern int vprintf(const char *, va_list);
-[; ;stdio.h: 199: extern int vsprintf(char *, const char *, va_list) __attribute__((unsupported("vsprintf() is not supported by this compiler")));
-[; ;stdio.h: 200: extern int vscanf(const char *, va_list ap);
-[; ;stdio.h: 201: extern int vsscanf(const char *, const char *, va_list);
-[; ;stdio.h: 205: extern int sprintf(char *, const char *, ...);
-[; ;stdio.h: 206: extern int printf(const char *, ...);
-[; ;stdint.h: 13: typedef signed char int8_t;
-[; ;stdint.h: 20: typedef signed int int16_t;
-[; ;stdint.h: 28: typedef signed short long int int24_t;
-[; ;stdint.h: 36: typedef signed long int int32_t;
-[; ;stdint.h: 43: typedef unsigned char uint8_t;
-[; ;stdint.h: 49: typedef unsigned int uint16_t;
-[; ;stdint.h: 56: typedef unsigned short long int uint24_t;
-[; ;stdint.h: 63: typedef unsigned long int uint32_t;
-[; ;stdint.h: 71: typedef signed char int_least8_t;
-[; ;stdint.h: 78: typedef signed int int_least16_t;
-[; ;stdint.h: 90: typedef signed short long int int_least24_t;
-[; ;stdint.h: 98: typedef signed long int int_least32_t;
-[; ;stdint.h: 105: typedef unsigned char uint_least8_t;
-[; ;stdint.h: 111: typedef unsigned int uint_least16_t;
-[; ;stdint.h: 121: typedef unsigned short long int uint_least24_t;
-[; ;stdint.h: 128: typedef unsigned long int uint_least32_t;
-[; ;stdint.h: 137: typedef signed char int_fast8_t;
-[; ;stdint.h: 144: typedef signed int int_fast16_t;
-[; ;stdint.h: 156: typedef signed short long int int_fast24_t;
-[; ;stdint.h: 164: typedef signed long int int_fast32_t;
-[; ;stdint.h: 171: typedef unsigned char uint_fast8_t;
-[; ;stdint.h: 177: typedef unsigned int uint_fast16_t;
-[; ;stdint.h: 187: typedef unsigned short long int uint_fast24_t;
-[; ;stdint.h: 194: typedef unsigned long int uint_fast32_t;
-[; ;stdint.h: 200: typedef int32_t intmax_t;
-[; ;stdint.h: 205: typedef uint32_t uintmax_t;
-[; ;stdint.h: 210: typedef int16_t intptr_t;
-[; ;stdint.h: 215: typedef uint16_t uintptr_t;
-[; ;IO.h: 60: void io_mode(uint8_t pin, uint8_t mode);
-[; ;IO.h: 71: void io_write(uint8_t pin, uint8_t value);
-[; ;IO.h: 84: uint8_t io_read( uint8_t pin );
-"10 main.c
-[p x FOSC=XT ]
-"11
-[p x WDTE=OFF ]
-"12
-[p x PWRTE=OFF ]
-"13
-[p x MCLRE=ON ]
-"14
-[p x BOREN=OFF ]
-"15
-[p x LVP=OFF ]
-"16
-[p x CPD=OFF ]
-"17
-[p x WRT=OFF ]
-"18
-[p x CCPMX=RB0 ]
-"19
-[p x CP=OFF ]
-"22
-[p x FCMEN=OFF ]
+[; ;io.h: 60: void io_mode(uint8_t pin, uint8_t mode);
+[; ;io.h: 71: void io_write(uint8_t pin, uint8_t value);
+[; ;io.h: 84: uint8_t io_read( uint8_t pin );
+"3 ../IO.c
+[v _portptrs `*Vuc ~T0 @X0 -> 0 `x e ]
+[i _portptrs
+:U ..
+"6
+&U _PORTA
+"9
+&U _PORTB
+..
+]
+[; ;IO.c: 3: volatile uint8_t * portptrs[] =
+[; ;IO.c: 4: {
+[; ;IO.c: 6: &PORTA,
+[; ;IO.c: 9: &PORTB,
+[; ;IO.c: 21: };
 "23
-[p x IESO=OFF ]
+[v _trisptrs `*Vuc ~T0 @X0 -> 0 `x e ]
+[i _trisptrs
+:U ..
 "26
-[v _main `(v ~T0 @X0 1 ef ]
-{
-[; ;main.c: 25: void main()
-[; ;main.c: 26: {
-[e :U _main ]
-[f ]
-"27
-[v _i `i ~T0 @X0 1 a ]
-[; ;main.c: 27: int i;
-[; ;main.c: 30: ANSEL = 0x00;
-"30
-[e = _ANSEL -> -> 0 `i `uc ]
-[; ;main.c: 32: io_mode(8, 0);
-"32
-[e ( _io_mode (2 , -> -> 8 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 33: io_mode(9, 0);
-"33
-[e ( _io_mode (2 , -> -> 9 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 34: io_mode(10, 0);
-"34
-[e ( _io_mode (2 , -> -> 10 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 35: io_mode(11, 0);
-"35
-[e ( _io_mode (2 , -> -> 11 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 36: io_mode(12, 0);
-"36
-[e ( _io_mode (2 , -> -> 12 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 37: io_mode(13, 0);
-"37
-[e ( _io_mode (2 , -> -> 13 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 38: io_mode(14, 0);
-"38
-[e ( _io_mode (2 , -> -> 14 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 39: io_mode(15, 0);
-"39
-[e ( _io_mode (2 , -> -> 15 `i `uc -> -> 0 `i `uc ]
-[; ;main.c: 41: for (;;) {
-"41
-{
-[e :U 91 ]
-{
-[; ;main.c: 42: for (i = 8; i < 16; i++) {
+&U _TRISA
+"29
+&U _TRISB
+..
+]
+[; ;IO.c: 23: volatile uint8_t * trisptrs[] =
+[; ;IO.c: 24: {
+[; ;IO.c: 26: &TRISA,
+[; ;IO.c: 29: &TRISB,
+[; ;IO.c: 40: };
 "42
-{
-[e = _i -> 8 `i ]
-[e $ < _i -> 16 `i 94  ]
-[e $U 95  ]
-[e :U 94 ]
-{
-[; ;main.c: 43: io_write(i, 1);
-"43
-[e ( _io_write (2 , -> _i `uc -> -> 1 `i `uc ]
-[; ;main.c: 44: _delay((unsigned long)((500)*(1000000/1000.0)));
+[v _mask `Cuc ~T0 @X0 -> 0 `x e ]
+[i _mask
+:U ..
 "44
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .1000.0 `ul ]
-[; ;main.c: 45: io_write(i, 0);
+-> -> 1 `i `uc
 "45
-[e ( _io_write (2 , -> _i `uc -> -> 0 `i `uc ]
+-> -> 2 `i `uc
 "46
-}
-"42
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 16 `i 94  ]
-[e :U 95 ]
-"46
-}
+-> -> 4 `i `uc
+"47
+-> -> 8 `i `uc
 "48
-}
-[; ;main.c: 46: }
-[; ;main.c: 48: }
-[e $U 91  ]
-[e :U 92 ]
-}
-[; ;main.c: 50: }
+-> -> 16 `i `uc
+"49
+-> -> 32 `i `uc
 "50
-[e :UE 90 ]
+-> -> 64 `i `uc
+"52
+-> -> 128 `i `uc
+..
+]
+[; ;IO.c: 42: const uint8_t mask[] =
+[; ;IO.c: 43: {
+[; ;IO.c: 44: 0x01,
+[; ;IO.c: 45: 0x02,
+[; ;IO.c: 46: 0x04,
+[; ;IO.c: 47: 0x08,
+[; ;IO.c: 48: 0x10,
+[; ;IO.c: 49: 0x20,
+[; ;IO.c: 50: 0x40,
+[; ;IO.c: 51: 0x80
+[; ;IO.c: 52: };
+"56
+[v _io_mode `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;IO.c: 55: void io_mode( uint8_t pin, uint8_t value )
+[; ;IO.c: 56: {
+[e :U _io_mode ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
+[f ]
+"57
+[v _port `uc ~T0 @X0 1 a ]
+[; ;IO.c: 57: uint8_t port = pin / 8;
+[e = _port -> / -> _pin `i -> 8 `i `uc ]
+"58
+[v _num `uc ~T0 @X0 1 a ]
+[; ;IO.c: 58: uint8_t num = pin % 8;
+[e = _num -> % -> _pin `i -> 8 `i `uc ]
+"60
+[v _now `uc ~T0 @X0 1 a ]
+[; ;IO.c: 60: uint8_t now = *(trisptrs[port]);
+[e = _now *U *U + &U _trisptrs * -> _port `ux -> -> # *U &U _trisptrs `ui `ux ]
+[; ;IO.c: 62: if( value == 0 )
+"62
+[e $ ! == -> _value `i -> 0 `i 90  ]
+[; ;IO.c: 63: now &= ~mask[num];
+"63
+[e =& _now -> ~ -> *U + &U _mask * -> _num `ux -> -> # *U &U _mask `ui `ux `i `uc ]
+[e $U 91  ]
+"64
+[e :U 90 ]
+[; ;IO.c: 64: else
+[; ;IO.c: 65: now |= mask[num];
+"65
+[e =| _now *U + &U _mask * -> _num `ux -> -> # *U &U _mask `ui `ux ]
+[e :U 91 ]
+[; ;IO.c: 67: *(trisptrs[port]) = now;
+"67
+[e = *U *U + &U _trisptrs * -> _port `ux -> -> # *U &U _trisptrs `ui `ux _now ]
+[; ;IO.c: 68: }
+"68
+[e :UE 89 ]
+}
+"71
+[v _io_write `(v ~T0 @X0 1 ef2`uc`uc ]
+{
+[; ;IO.c: 70: void io_write( uint8_t pin, uint8_t value )
+[; ;IO.c: 71: {
+[e :U _io_write ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[v _value `uc ~T0 @X0 1 r2 ]
+[f ]
+"72
+[v _port `uc ~T0 @X0 1 a ]
+[; ;IO.c: 72: uint8_t port = pin / 8;
+[e = _port -> / -> _pin `i -> 8 `i `uc ]
+"73
+[v _num `uc ~T0 @X0 1 a ]
+[; ;IO.c: 73: uint8_t num = pin % 8;
+[e = _num -> % -> _pin `i -> 8 `i `uc ]
+"75
+[v _now `uc ~T0 @X0 1 a ]
+[; ;IO.c: 75: uint8_t now = *(portptrs[port]);
+[e = _now *U *U + &U _portptrs * -> _port `ux -> -> # *U &U _portptrs `ui `ux ]
+[; ;IO.c: 77: if( value == 0 )
+"77
+[e $ ! == -> _value `i -> 0 `i 93  ]
+[; ;IO.c: 78: now &= ~mask[num];
+"78
+[e =& _now -> ~ -> *U + &U _mask * -> _num `ux -> -> # *U &U _mask `ui `ux `i `uc ]
+[e $U 94  ]
+"79
+[e :U 93 ]
+[; ;IO.c: 79: else
+[; ;IO.c: 80: now |= mask[num];
+"80
+[e =| _now *U + &U _mask * -> _num `ux -> -> # *U &U _mask `ui `ux ]
+[e :U 94 ]
+[; ;IO.c: 82: *(portptrs[port]) = now;
+"82
+[e = *U *U + &U _portptrs * -> _port `ux -> -> # *U &U _portptrs `ui `ux _now ]
+[; ;IO.c: 83: }
+"83
+[e :UE 92 ]
+}
+"87
+[v _io_read `(uc ~T0 @X0 1 ef1`uc ]
+{
+[; ;IO.c: 86: uint8_t io_read( uint8_t pin )
+[; ;IO.c: 87: {
+[e :U _io_read ]
+[v _pin `uc ~T0 @X0 1 r1 ]
+[f ]
+"88
+[v _port `uc ~T0 @X0 1 a ]
+[; ;IO.c: 88: uint8_t port = pin / 8;
+[e = _port -> / -> _pin `i -> 8 `i `uc ]
+"89
+[v _num `uc ~T0 @X0 1 a ]
+[; ;IO.c: 89: uint8_t num = pin % 8;
+[e = _num -> % -> _pin `i -> 8 `i `uc ]
+"91
+[v _now `uc ~T0 @X0 1 a ]
+[; ;IO.c: 91: uint8_t now = *(portptrs[port]);
+[e = _now *U *U + &U _portptrs * -> _port `ux -> -> # *U &U _portptrs `ui `ux ]
+[; ;IO.c: 93: if( now & mask[num])
+"93
+[e $ ! != & -> _now `i -> *U + &U _mask * -> _num `ux -> -> # *U &U _mask `ui `ux `i -> 0 `i 96  ]
+[; ;IO.c: 94: return 1;
+"94
+[e ) -> -> 1 `i `uc ]
+[e $UE 95  ]
+[e $U 97  ]
+"95
+[e :U 96 ]
+[; ;IO.c: 95: else
+[; ;IO.c: 96: return 0;
+"96
+[e ) -> -> 0 `i `uc ]
+[e $UE 95  ]
+[e :U 97 ]
+[; ;IO.c: 97: }
+"97
+[e :UE 95 ]
 }

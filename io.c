@@ -1,5 +1,5 @@
-#include <xc.h>
 #include "io.h"
+
 volatile uint8_t * portptrs[] =
 {
 #if defined (_PORTA_RA0_POSN)
@@ -22,22 +22,23 @@ volatile uint8_t * portptrs[] =
 
 volatile uint8_t * trisptrs[] =
 {
-#if defined (_TRISA_RA0_POSN)
+#if defined (_TRISA_TRISA0_POSN)
 	&TRISA,
 #endif
-#if defined (_TRISB_RB0_POSN)
+#if defined (_TRISB_TRISB0_POSN)
 	&TRISB,
 #endif
-#if defined (_TRISC_RC0_POSN)
+#if defined (_TRISC_TRISC0_POSN)
 	&TRISC
 #endif
-#if defined (_TRISD_RD0_POSN)
+#if defined ( _TRISD_TRISD0_POSN)
 	&TRISD,
 #endif
-#if defined (_TRISE_RE0_POSN)
+#if defined ( _TRISE_TRISE0_POSN)
 	&TRISE,
 #endif
 };
+
 const uint8_t mask[] =
 {
 	0x01,
@@ -49,6 +50,23 @@ const uint8_t mask[] =
 	0x40,
 	0x80
 };
+
+
+void io_mode( uint8_t pin, uint8_t value )
+{
+	uint8_t port = pin / 8;
+	uint8_t num = pin % 8;
+
+	uint8_t now = *(trisptrs[port]);
+
+	if( value == OUTPUT )
+		now &= ~mask[num];
+	else
+		now |= mask[num];
+
+	*(trisptrs[port]) = now;
+}
+
 void io_write( uint8_t pin, uint8_t value )
 {
 	uint8_t port = pin / 8;
@@ -64,17 +82,16 @@ void io_write( uint8_t pin, uint8_t value )
 	*(portptrs[port]) = now;
 }
 
-void io_mode( uint8_t pin, uint8_t value )
+
+uint8_t io_read( uint8_t pin )
 {
 	uint8_t port = pin / 8;
 	uint8_t num = pin % 8;
 
 	uint8_t now = *(portptrs[port]);
 
-	if( value == LOW )
-		now &= ~mask[num];
+	if( now & mask[num])
+		return HIGH;
 	else
-		now |= mask[num];
-
-	*(portptrs[port]) = now;
+		return LOW;
 }

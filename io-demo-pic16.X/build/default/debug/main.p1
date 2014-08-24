@@ -1056,9 +1056,9 @@ Version 3.2 HI-TECH Software Intermediate Code
 [; ;main.c: 43: io_write(i, 1);
 "43
 [e ( _io_write (2 , -> _i `uc -> -> 1 `i `uc ]
-[; ;main.c: 44: _delay((unsigned long)((500)*(1000000/1000.0)));
+[; ;main.c: 44: _delay((unsigned long)((100)*(1000000/1000.0)));
 "44
-[e ( __delay (1 -> * -> -> 500 `i `d / -> -> 1000000 `l `d .1000.0 `ul ]
+[e ( __delay (1 -> * -> -> 100 `i `d / -> -> 1000000 `l `d .1000.0 `ul ]
 [; ;main.c: 45: io_write(i, 0);
 "45
 [e ( _io_write (2 , -> _i `uc -> -> 0 `i `uc ]

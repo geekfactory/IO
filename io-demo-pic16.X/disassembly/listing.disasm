@@ -1,0 +1,614 @@
+Disassembly Listing for io-demo-pic16
+Generated From:
+C:/Users/Ruben/Dropbox/Electronics/MCULib/IO/io-demo-pic16.X/dist/default/debug/io-demo-pic16.X.debug.cof
+23/08/2014 09:01:37 PM
+
+---  C:/Users/Ruben/Dropbox/Electronics/MCULib/IO/io-demo-pic16.X/main.c  -------------------------------
+1:             #include <xc.h>
+2:             #include <stdio.h>
+3:             #include "../IO.h"
+4:             #include "../delay/Delay.h"
+5:             
+6:             // Fusibles de configuración MCLR (reset) Activo, Protección de lectura desactivada
+7:             // Bronw-out reset desactivado, perro guardian desactivado, Power-up timer desactivado
+8:             // Oscilador Interno Activo
+9:             // CONFIG1
+10:            #pragma config FOSC = XT	// Oscillator Selection bits (XT oscillator)
+11:            #pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT disabled)
+12:            #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
+13:            #pragma config MCLRE = ON       // RA5/MCLR/VPP Pin Function Select bit (RA5/MCLR/VPP pin function is MCLR)
+14:            #pragma config BOREN = OFF      // Brown-out Reset Enable bit (BOR disabled)
+15:            #pragma config LVP = OFF        // Low-Voltage Programming Enable bit (RB3 is digital I/O, HV on MCLR must be used for programming)
+16:            #pragma config CPD = OFF        // Data EE Memory Code Protection bit (Code protection off)
+17:            #pragma config WRT = OFF        // Flash Program Memory Write Enable bits (Write protection off)
+18:            #pragma config CCPMX = RB0      // CCP1 Pin Selection bit (CCP1 function on RB0)
+19:            #pragma config CP = OFF         // Flash Program Memory Code Protection bit (Code protection off)
+20:            
+21:            // CONFIG2
+22:            #pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enable bit (Fail-Safe Clock Monitor disabled)
+23:            #pragma config IESO = OFF       // Internal External Switchover bit (Internal External Switchover mode disabled)
+24:            
+25:            void main()
+26:            {
+27:            	int i;
+28:            	//OSCCON = 0x6C; // Para usar el oscilador interno PIC16F88 4 Mhz
+29:            	//OSCCON = 0x7C; // Para usar el oscilador interno PIC16F88 8 Mhz
+30:            	ANSEL = 0x00; // Configuracion de canales analogicos en PIC16F88
+078E  1683     BSF STATUS, 0x5
+078F  1303     BCF STATUS, 0x6
+0790  019B     CLRF 0x1B
+31:            
+32:            	io_mode(8, OUTPUT);
+0791  01FA     CLRF value
+0792  3008     MOVLW 0x8
+0793  118A     BCF PCLATH, 0x3
+0794  26BD     CALL 0x6BD
+0795  118A     BCF PCLATH, 0x3
+33:            	io_mode(9, OUTPUT);
+0796  01FA     CLRF value
+0797  3009     MOVLW 0x9
+0798  118A     BCF PCLATH, 0x3
+0799  26BD     CALL 0x6BD
+079A  118A     BCF PCLATH, 0x3
+34:            	io_mode(10, OUTPUT);
+079B  01FA     CLRF value
+079C  300A     MOVLW 0xA
+079D  118A     BCF PCLATH, 0x3
+079E  26BD     CALL 0x6BD
+079F  118A     BCF PCLATH, 0x3
+35:            	io_mode(11, OUTPUT);
+07A0  01FA     CLRF value
+07A1  300B     MOVLW 0xB
+07A2  118A     BCF PCLATH, 0x3
+07A3  26BD     CALL 0x6BD
+07A4  118A     BCF PCLATH, 0x3
+36:            	io_mode(12, OUTPUT);
+07A5  01FA     CLRF value
+07A6  300C     MOVLW 0xC
+07A7  118A     BCF PCLATH, 0x3
+07A8  26BD     CALL 0x6BD
+07A9  118A     BCF PCLATH, 0x3
+37:            	io_mode(13, OUTPUT);
+07AA  01FA     CLRF value
+07AB  300D     MOVLW 0xD
+07AC  118A     BCF PCLATH, 0x3
+07AD  26BD     CALL 0x6BD
+07AE  118A     BCF PCLATH, 0x3
+38:            	io_mode(14, OUTPUT);
+07AF  01FA     CLRF value
+07B0  300E     MOVLW 0xE
+07B1  118A     BCF PCLATH, 0x3
+07B2  26BD     CALL 0x6BD
+07B3  118A     BCF PCLATH, 0x3
+39:            	io_mode(15, OUTPUT);
+07B4  01FA     CLRF value
+07B5  300F     MOVLW 0xF
+07B6  118A     BCF PCLATH, 0x3
+07B7  26BD     CALL 0x6BD
+07B8  118A     BCF PCLATH, 0x3
+07B9  2FBA     GOTO 0x7BA
+40:            
+41:            	for (;;) {
+42:            		for (i = 8; i < 16; i++) {
+07BA  3008     MOVLW 0x8
+07BB  1283     BCF STATUS, 0x5
+07BC  1303     BCF STATUS, 0x6
+07BD  00A8     MOVWF i
+07BE  3000     MOVLW 0x0
+07BF  00A9     MOVWF 0x29
+07C0  0829     MOVF 0x29, W
+07C1  3A80     XORLW 0x80
+07C2  00FF     MOVWF 0x7F
+07C3  3080     MOVLW 0x80
+07C4  027F     SUBWF 0x7F, W
+07C5  1D03     BTFSS STATUS, 0x2
+07C6  2FC9     GOTO 0x7C9
+07C7  3010     MOVLW 0x10
+07C8  0228     SUBWF i, W
+07C9  1C03     BTFSS STATUS, 0x0
+07CA  2FCC     GOTO 0x7CC
+07CB  2FCD     GOTO 0x7CD
+07CC  2FCF     GOTO 0x7CF
+07CD  2FBA     GOTO 0x7BA
+07CE  2FBA     GOTO 0x7BA
+07E7  3001     MOVLW 0x1
+07E8  1283     BCF STATUS, 0x5
+07E9  1303     BCF STATUS, 0x6
+07EA  07A8     ADDWF i, F
+07EB  1803     BTFSC STATUS, 0x0
+07EC  0AA9     INCF 0x29, F
+07ED  3000     MOVLW 0x0
+07EE  07A9     ADDWF 0x29, F
+07EF  0829     MOVF 0x29, W
+07F0  3A80     XORLW 0x80
+07F1  00FF     MOVWF 0x7F
+07F2  3080     MOVLW 0x80
+07F3  027F     SUBWF 0x7F, W
+07F4  1D03     BTFSS STATUS, 0x2
+07F5  2FF8     GOTO 0x7F8
+07F6  3010     MOVLW 0x10
+07F7  0228     SUBWF i, W
+07F8  1C03     BTFSS STATUS, 0x0
+07F9  2FFB     GOTO 0x7FB
+07FA  2FFC     GOTO 0x7FC
+07FB  2FCF     GOTO 0x7CF
+07FC  2FBA     GOTO 0x7BA
+43:            			io_write(i, HIGH);
+07CF  01FA     CLRF value
+07D0  0AFA     INCF value, F
+07D1  1283     BCF STATUS, 0x5
+07D2  1303     BCF STATUS, 0x6
+07D3  0828     MOVF i, W
+07D4  118A     BCF PCLATH, 0x3
+07D5  265E     CALL 0x65E
+07D6  118A     BCF PCLATH, 0x3
+44:            			delay_ms(100);
+07D7  3082     MOVLW 0x82
+07D8  00FC     MOVWF 0x7C
+07D9  30DD     MOVLW 0xDD
+07DA  00FB     MOVWF 0x7B
+07DB  0BFB     DECFSZ 0x7B, F
+07DC  2FDB     GOTO 0x7DB
+07DD  0BFC     DECFSZ 0x7C, F
+07DE  2FDB     GOTO 0x7DB
+07DF  2FE0     GOTO 0x7E0
+45:            			io_write(i, LOW);
+07E0  01FA     CLRF value
+07E1  1283     BCF STATUS, 0x5
+07E2  1303     BCF STATUS, 0x6
+07E3  0828     MOVF i, W
+07E4  118A     BCF PCLATH, 0x3
+07E5  265E     CALL 0x65E
+07E6  118A     BCF PCLATH, 0x3
+46:            		}
+47:            
+48:            	}
+07FD  2FBA     GOTO 0x7BA
+49:            
+50:            }
+07FE  118A     BCF PCLATH, 0x3
+---  C:/Users/Ruben/Dropbox/Electronics/MCULib/IO/IO.c  -------------------------------------------------
+1:             #include "io.h"
+2:             
+3:             volatile uint8_t * portptrs[] =
+4:             {
+5:             #if defined (_PORTA_RA0_POSN)
+6:             	&PORTA,
+7:             #endif
+8:             #if defined (_PORTB_RB0_POSN)
+9:             	&PORTB,
+10:            #endif
+11:            #if defined (_PORTC_RC0_POSN)
+12:            	&PORTC,
+13:            #endif
+14:            #if defined (_PORTD_RD0_POSN)
+15:            	&PORTD,
+16:            #endif
+17:            #if defined (_PORTE_RE0_POSN)
+18:            	&PORTE,
+19:            #endif
+20:            
+21:            };
+22:            
+23:            volatile uint8_t * trisptrs[] =
+24:            {
+25:            #if defined (_TRISA_TRISA0_POSN)
+26:            	&TRISA,
+27:            #endif
+28:            #if defined (_TRISB_TRISB0_POSN)
+29:            	&TRISB,
+30:            #endif
+31:            #if defined (_TRISC_TRISC0_POSN)
+32:            	&TRISC
+33:            #endif
+34:            #if defined ( _TRISD_TRISD0_POSN)
+35:            	&TRISD,
+36:            #endif
+37:            #if defined ( _TRISE_TRISE0_POSN)
+38:            	&TRISE,
+39:            #endif
+40:            };
+41:            
+42:            const uint8_t mask[] =
+43:            {
+44:            	0x01,
+45:            	0x02,
+46:            	0x04,
+47:            	0x08,
+48:            	0x10,
+49:            	0x20,
+50:            	0x40,
+51:            	0x80
+52:            };
+53:            
+54:            
+55:            void io_mode( uint8_t pin, uint8_t value )
+56:            {
+06BD  1283     BCF STATUS, 0x5
+06BE  1303     BCF STATUS, 0x6
+06BF  00A5     MOVWF 0x25
+57:            	uint8_t port = pin / 8;
+06C0  3008     MOVLW 0x8
+06C1  00F1     MOVWF divisor
+06C2  3000     MOVLW 0x0
+06C3  00F2     MOVWF 0x72
+06C4  0825     MOVF 0x25, W
+06C5  00A0     MOVWF 0x20
+06C6  01A1     CLRF 0x21
+06C7  0820     MOVF 0x20, W
+06C8  00F3     MOVWF dividend
+06C9  0821     MOVF 0x21, W
+06CA  00F4     MOVWF 0x74
+06CB  118A     BCF PCLATH, 0x3
+06CC  271C     CALL 0x71C
+06CD  118A     BCF PCLATH, 0x3
+06CE  0871     MOVF divisor, W
+06CF  1283     BCF STATUS, 0x5
+06D0  1303     BCF STATUS, 0x6
+06D1  00A2     MOVWF 0x22
+06D2  0822     MOVF 0x22, W
+06D3  00A6     MOVWF port
+58:            	uint8_t num = pin % 8;
+06D4  0825     MOVF 0x25, W
+06D5  3907     ANDLW 0x7
+06D6  00A0     MOVWF 0x20
+06D7  0820     MOVF 0x20, W
+06D8  00A7     MOVWF num
+59:            
+60:            	uint8_t now = *(trisptrs[port]);
+06D9  0826     MOVF port, W
+06DA  00A0     MOVWF 0x20
+06DB  0720     ADDWF 0x20, W
+06DC  3E2E     ADDLW 0x2E
+06DD  0084     MOVWF FSR
+06DE  1383     BCF STATUS, 0x7
+06DF  0800     MOVF INDF, W
+06E0  00A1     MOVWF 0x21
+06E1  0A84     INCF FSR, F
+06E2  0800     MOVF INDF, W
+06E3  00A2     MOVWF 0x22
+06E4  0821     MOVF 0x21, W
+06E5  0084     MOVWF FSR
+06E6  1783     BSF STATUS, 0x7
+06E7  1C22     BTFSS 0x22, 0x0
+06E8  1383     BCF STATUS, 0x7
+06E9  0800     MOVF INDF, W
+06EA  00A3     MOVWF 0x23
+06EB  0823     MOVF 0x23, W
+06EC  00A4     MOVWF now
+61:            
+62:            	if( value == OUTPUT )
+06ED  08FA     MOVF value, F
+06EE  1D03     BTFSS STATUS, 0x2
+06EF  2EF1     GOTO 0x6F1
+06F0  2EF2     GOTO 0x6F2
+06F1  2EFD     GOTO 0x6FD
+63:            		now &= ~mask[num];
+06F2  0827     MOVF num, W
+06F3  3E01     ADDLW 0x1
+06F4  0084     MOVWF FSR
+06F5  118A     BCF PCLATH, 0x3
+06F6  2003     CALL 0x3
+06F7  118A     BCF PCLATH, 0x3
+06F8  3AFF     XORLW 0xFF
+06F9  00A0     MOVWF 0x20
+06FA  0820     MOVF 0x20, W
+06FB  05A4     ANDWF now, F
+06FC  2F07     GOTO 0x707
+64:            	else
+65:            		now |= mask[num];
+06FD  0827     MOVF num, W
+06FE  3E01     ADDLW 0x1
+06FF  0084     MOVWF FSR
+0700  118A     BCF PCLATH, 0x3
+0701  2003     CALL 0x3
+0702  118A     BCF PCLATH, 0x3
+0703  00A0     MOVWF 0x20
+0704  0820     MOVF 0x20, W
+0705  04A4     IORWF now, F
+0706  2F07     GOTO 0x707
+66:            
+67:            	*(trisptrs[port]) = now;
+0707  0824     MOVF now, W
+0708  00A0     MOVWF 0x20
+0709  0826     MOVF port, W
+070A  00A1     MOVWF 0x21
+070B  0721     ADDWF 0x21, W
+070C  3E2E     ADDLW 0x2E
+070D  0084     MOVWF FSR
+070E  1383     BCF STATUS, 0x7
+070F  0800     MOVF INDF, W
+0710  00A2     MOVWF 0x22
+0711  0A84     INCF FSR, F
+0712  0800     MOVF INDF, W
+0713  00A3     MOVWF 0x23
+0714  0822     MOVF 0x22, W
+0715  0084     MOVWF FSR
+0716  1783     BSF STATUS, 0x7
+0717  1C23     BTFSS 0x23, 0x0
+0718  1383     BCF STATUS, 0x7
+0719  0820     MOVF 0x20, W
+071A  0080     MOVWF INDF
+68:            }
+071B  0008     RETURN
+69:            
+70:            void io_write( uint8_t pin, uint8_t value )
+71:            {
+065E  1283     BCF STATUS, 0x5
+065F  1303     BCF STATUS, 0x6
+0660  00A5     MOVWF 0x25
+72:            	uint8_t port = pin / 8;
+0661  3008     MOVLW 0x8
+0662  00F1     MOVWF divisor
+0663  3000     MOVLW 0x0
+0664  00F2     MOVWF 0x72
+0665  0825     MOVF 0x25, W
+0666  00A0     MOVWF 0x20
+0667  01A1     CLRF 0x21
+0668  0820     MOVF 0x20, W
+0669  00F3     MOVWF dividend
+066A  0821     MOVF 0x21, W
+066B  00F4     MOVWF 0x74
+066C  118A     BCF PCLATH, 0x3
+066D  271C     CALL 0x71C
+066E  118A     BCF PCLATH, 0x3
+066F  0871     MOVF divisor, W
+0670  1283     BCF STATUS, 0x5
+0671  1303     BCF STATUS, 0x6
+0672  00A2     MOVWF 0x22
+0673  0822     MOVF 0x22, W
+0674  00A6     MOVWF port
+73:            	uint8_t num = pin % 8;
+0675  0825     MOVF 0x25, W
+0676  3907     ANDLW 0x7
+0677  00A0     MOVWF 0x20
+0678  0820     MOVF 0x20, W
+0679  00A7     MOVWF num
+74:            
+75:            	uint8_t now = *(portptrs[port]);
+067A  0826     MOVF port, W
+067B  00A0     MOVWF 0x20
+067C  0720     ADDWF 0x20, W
+067D  3E2A     ADDLW 0x2A
+067E  0084     MOVWF FSR
+067F  1383     BCF STATUS, 0x7
+0680  0800     MOVF INDF, W
+0681  00A1     MOVWF 0x21
+0682  0A84     INCF FSR, F
+0683  0800     MOVF INDF, W
+0684  00A2     MOVWF 0x22
+0685  0821     MOVF 0x21, W
+0686  0084     MOVWF FSR
+0687  1783     BSF STATUS, 0x7
+0688  1C22     BTFSS 0x22, 0x0
+0689  1383     BCF STATUS, 0x7
+068A  0800     MOVF INDF, W
+068B  00A3     MOVWF 0x23
+068C  0823     MOVF 0x23, W
+068D  00A4     MOVWF now
+76:            
+77:            	if( value == LOW )
+068E  08FA     MOVF value, F
+068F  1D03     BTFSS STATUS, 0x2
+0690  2E92     GOTO 0x692
+0691  2E93     GOTO 0x693
+0692  2E9E     GOTO 0x69E
+78:            		now &= ~mask[num];
+0693  0827     MOVF num, W
+0694  3E01     ADDLW 0x1
+0695  0084     MOVWF FSR
+0696  118A     BCF PCLATH, 0x3
+0697  2003     CALL 0x3
+0698  118A     BCF PCLATH, 0x3
+0699  3AFF     XORLW 0xFF
+069A  00A0     MOVWF 0x20
+069B  0820     MOVF 0x20, W
+069C  05A4     ANDWF now, F
+069D  2EA8     GOTO 0x6A8
+79:            	else
+80:            		now |= mask[num];
+069E  0827     MOVF num, W
+069F  3E01     ADDLW 0x1
+06A0  0084     MOVWF FSR
+06A1  118A     BCF PCLATH, 0x3
+06A2  2003     CALL 0x3
+06A3  118A     BCF PCLATH, 0x3
+06A4  00A0     MOVWF 0x20
+06A5  0820     MOVF 0x20, W
+06A6  04A4     IORWF now, F
+06A7  2EA8     GOTO 0x6A8
+81:            
+82:            	*(portptrs[port]) = now;
+06A8  0824     MOVF now, W
+06A9  00A0     MOVWF 0x20
+06AA  0826     MOVF port, W
+06AB  00A1     MOVWF 0x21
+06AC  0721     ADDWF 0x21, W
+06AD  3E2A     ADDLW 0x2A
+06AE  0084     MOVWF FSR
+06AF  1383     BCF STATUS, 0x7
+06B0  0800     MOVF INDF, W
+06B1  00A2     MOVWF 0x22
+06B2  0A84     INCF FSR, F
+06B3  0800     MOVF INDF, W
+06B4  00A3     MOVWF 0x23
+06B5  0822     MOVF 0x22, W
+06B6  0084     MOVWF FSR
+06B7  1783     BSF STATUS, 0x7
+06B8  1C23     BTFSS 0x23, 0x0
+06B9  1383     BCF STATUS, 0x7
+06BA  0820     MOVF 0x20, W
+06BB  0080     MOVWF INDF
+83:            }
+06BC  0008     RETURN
+84:            
+85:            
+86:            uint8_t io_read( uint8_t pin )
+87:            {
+88:            	uint8_t port = pin / 8;
+89:            	uint8_t num = pin % 8;
+90:            
+91:            	uint8_t now = *(portptrs[port]);
+92:            
+93:            	if( now & mask[num])
+94:            		return HIGH;
+95:            	else
+96:            		return LOW;
+97:            }
+---  C:/Program Files (x86)/Microchip/xc8/v1.12/sources/awdiv.c  ----------------------------------------
+1:             // integer signed division
+2:             
+3:             signed int
+4:             #ifdef __PICC__
+5:             #warning TODO: update cgpic and this file to use the other prototype
+6:             __awdiv(signed int divisor, signed int dividend)
+7:             #else
+8:             __awdiv(signed int dividend, signed int divisor)
+9:             #endif
+071C  01F7     CLRF sign
+10:            {
+071D  1FF2     BTFSS 0x72, 0x7
+071E  2F20     GOTO 0x720
+071F  2F21     GOTO 0x721
+0720  2F29     GOTO 0x729
+11:            	signed int	quotient;
+0721  09F1     COMF divisor, F
+0722  09F2     COMF 0x72, F
+0723  0AF1     INCF divisor, F
+0724  1903     BTFSC STATUS, 0x2
+0725  0AF2     INCF 0x72, F
+12:            	unsigned char	counter, sign;
+0726  01F7     CLRF sign
+0727  0AF7     INCF sign, F
+0728  2F29     GOTO 0x729
+13:            
+14:            	sign = 0;
+0729  1FF4     BTFSS 0x74, 0x7
+072A  2F2C     GOTO 0x72C
+072B  2F2D     GOTO 0x72D
+072C  2F37     GOTO 0x737
+15:            	if(divisor < 0) {
+072D  09F3     COMF dividend, F
+072E  09F4     COMF 0x74, F
+072F  0AF3     INCF dividend, F
+0730  1903     BTFSC STATUS, 0x2
+0731  0AF4     INCF 0x74, F
+16:            		divisor = -divisor;
+0732  3001     MOVLW 0x1
+0733  00F5     MOVWF 0x75
+0734  0875     MOVF 0x75, W
+0735  06F7     XORWF sign, F
+0736  2F37     GOTO 0x737
+17:            		sign = 1;
+18:            	}
+0737  01F8     CLRF quotient
+0738  01F9     CLRF 0x79
+19:            	if(dividend < 0) {
+0739  0872     MOVF 0x72, W
+073A  0471     IORWF divisor, W
+073B  1903     BTFSC STATUS, 0x2
+073C  2F3E     GOTO 0x73E
+073D  2F3F     GOTO 0x73F
+073E  2F7C     GOTO 0x77C
+20:            		dividend = -dividend;
+073F  01F6     CLRF counter
+0740  0AF6     INCF counter, F
+21:            		sign ^= 1;
+0741  2F4E     GOTO 0x74E
+074E  1FF2     BTFSS 0x72, 0x7
+074F  2F51     GOTO 0x751
+0750  2F52     GOTO 0x752
+0751  2F42     GOTO 0x742
+0752  2F54     GOTO 0x754
+0753  2F54     GOTO 0x754
+22:            	}
+0742  3001     MOVLW 0x1
+0743  1003     BCF STATUS, 0x0
+0744  0DF1     RLF divisor, F
+0745  0DF2     RLF 0x72, F
+0746  3EFF     ADDLW 0xFF
+0747  1D03     BTFSS STATUS, 0x2
+0748  2F43     GOTO 0x743
+23:            	quotient = 0;
+0749  3001     MOVLW 0x1
+074A  00F5     MOVWF 0x75
+074B  0875     MOVF 0x75, W
+074C  07F6     ADDWF counter, F
+074D  2F4E     GOTO 0x74E
+24:            	if(divisor != 0) {
+25:            		counter = 1;
+26:            		while((divisor & 0x8000U) == 0) {
+0754  3001     MOVLW 0x1
+0755  1003     BCF STATUS, 0x0
+0756  0DF8     RLF quotient, F
+0757  0DF9     RLF 0x79, F
+0758  3EFF     ADDLW 0xFF
+0759  1D03     BTFSS STATUS, 0x2
+075A  2F55     GOTO 0x755
+27:            			divisor <<= 1;
+075B  0872     MOVF 0x72, W
+075C  0274     SUBWF 0x74, W
+075D  1D03     BTFSS STATUS, 0x2
+075E  2F61     GOTO 0x761
+075F  0871     MOVF divisor, W
+0760  0273     SUBWF dividend, W
+0761  1C03     BTFSS STATUS, 0x0
+0762  2F64     GOTO 0x764
+0763  2F65     GOTO 0x765
+0764  2F6D     GOTO 0x76D
+28:            			counter++;
+0765  0871     MOVF divisor, W
+0766  02F3     SUBWF dividend, F
+0767  0872     MOVF 0x72, W
+0768  1C03     BTFSS STATUS, 0x0
+0769  03F4     DECF 0x74, F
+076A  02F4     SUBWF 0x74, F
+29:            		}
+076B  1478     BSF quotient, 0x0
+076C  2F6D     GOTO 0x76D
+30:            		do {
+31:            			quotient <<= 1;
+076D  3001     MOVLW 0x1
+076E  1003     BCF STATUS, 0x0
+076F  0CF2     RRF 0x72, F
+0770  0CF1     RRF divisor, F
+0771  3EFF     ADDLW 0xFF
+0772  1D03     BTFSS STATUS, 0x2
+0773  2F6E     GOTO 0x76E
+32:            			if((unsigned int)divisor <= (unsigned int)dividend) {
+0774  3001     MOVLW 0x1
+0775  02F6     SUBWF counter, F
+0776  1D03     BTFSS STATUS, 0x2
+0777  2F79     GOTO 0x779
+0778  2F7A     GOTO 0x77A
+0779  2F54     GOTO 0x754
+077A  2F7C     GOTO 0x77C
+077B  2F7C     GOTO 0x77C
+33:            				dividend -= divisor;
+34:            				quotient |= 1;
+077C  0877     MOVF sign, W
+077D  1D03     BTFSS STATUS, 0x2
+077E  2F80     GOTO 0x780
+077F  2F86     GOTO 0x786
+35:            			}
+0780  09F8     COMF quotient, F
+0781  09F9     COMF 0x79, F
+0782  0AF8     INCF quotient, F
+0783  1903     BTFSC STATUS, 0x2
+0784  0AF9     INCF 0x79, F
+0785  2F86     GOTO 0x786
+36:            			*(unsigned int *)&divisor >>= 1;
+0786  0879     MOVF 0x79, W
+0787  01F2     CLRF 0x72
+0788  07F2     ADDWF 0x72, F
+0789  0878     MOVF quotient, W
+078A  01F1     CLRF divisor
+078B  07F1     ADDWF divisor, F
+078C  2F8D     GOTO 0x78D
+37:            		} while(--counter != 0);
+078D  0008     RETURN
+38:            	}
+39:            	if(sign)
+40:            		quotient = -quotient;
+41:            	return quotient;
+42:            }

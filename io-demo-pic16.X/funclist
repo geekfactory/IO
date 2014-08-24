@@ -1,3 +1,8 @@
-_main: CODE, 2009 0 36
-__initialization: CODE, 2045 0 0
-Total: 36
+_io_mode: CODE, 1725 0 95
+___awdiv: CODE, 1820 0 114
+__stringtab: STRING, 3 0 6
+_main: CODE, 1934 0 114
+_io_write: CODE, 1630 0 95
+_mask: STRING, 9 0 8
+__initialization: CODE, 1593 0 34
+Total: 466
